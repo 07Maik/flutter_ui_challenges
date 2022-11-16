@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+
+import 'package:flutter_ui_challenges/core/constants.dart';
+import 'package:flutter_ui_challenges/core/presentation/pages/challenges_list.dart';
+import 'package:flutter_ui_challenges/core/presentation/routes/custom_route_transitions.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -17,16 +23,16 @@ class HomePage extends StatelessWidget {
                 const SizedBox(height: 50.0),
                 backgroundImage(),
                 const SizedBox(height: 50.0),
-                button(),
+                buttonStart(context),
               ],
             ),
           ),
-          SliverFillRemaining(hasScrollBody: false, child: socialMedia())
+          SliverFillRemaining(hasScrollBody: false, child: linksSocialMedia())
         ]));
   }
 
   Widget title() => const Text(
-        'Challenges UI',
+        'UI Challenges',
         style: TextStyle(fontSize: 45.0, color: Colors.black),
       );
 
@@ -34,37 +40,40 @@ class HomePage extends StatelessWidget {
       height: 350,
       image: AssetImage('assets/images/background_flutter_dev.png'));
 
-  Widget socialMedia() {
+  Widget linksSocialMedia() {
     return Container(
       margin: const EdgeInsets.only(top: 30, bottom: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const CircleAvatar(
-            radius: 25,
-            backgroundColor: Colors.white,
-            backgroundImage: AssetImage('assets/icons/gitHub.png'),
+          MaterialButton(
+            onPressed: () => openExternalLink(githubRepo),
+            child: const CircleAvatar(
+              radius: 25,
+              backgroundColor: Colors.white,
+              backgroundImage: AssetImage('assets/icons/gitHub.png'),
+            ),
           ),
           const SizedBox(width: 50),
-          Container(
-            width: 55,
-            height: 55,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/icons/LI-In-Bug.png'))),
+          MaterialButton(
+            onPressed: () => openExternalLink(linkedIn),
+            child: Image.asset('assets/icons/LI-In-Bug.png', height: 50),
           ),
         ],
       ),
     );
   }
 
-  Widget button() {
+  Widget buttonStart(BuildContext context) {
     return MaterialButton(
         color: Colors.blue,
         textColor: Colors.white,
         elevation: 3,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        onPressed: () {},
+        onPressed: () {
+          CustomRouteTransitions(
+              context: context, child: const ChallengesList());
+        },
         child: Container(
             alignment: Alignment.center,
             width: 150,
@@ -73,5 +82,16 @@ class HomePage extends StatelessWidget {
               'Start',
               style: TextStyle(fontSize: 18),
             )));
+  }
+
+  void openExternalLink(Map<String, String> uriParameters) async {
+    final Uri uri = Uri(
+        scheme: uriParameters["scheme"],
+        host: uriParameters["host"],
+        path: uriParameters["path"]);
+
+    if (await canLaunchUrl(uri)) {
+      launchUrl(uri, mode: LaunchMode.externalApplication);
+    }
   }
 }
