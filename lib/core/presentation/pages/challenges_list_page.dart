@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_challenges/core/presentation/pages/layout_page.dart';
 
+import 'package:flutter_ui_challenges/core/presentation/pages/layout_page.dart';
 import 'package:flutter_ui_challenges/core/presentation/widgets/custom_route_transitions.dart';
 import 'package:flutter_ui_challenges/core/presentation/routes.dart';
 
