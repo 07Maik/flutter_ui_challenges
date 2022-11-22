@@ -34,9 +34,9 @@ class ChallengesListPage extends StatelessWidget {
                 function: () => CustomRouteTransitions(
                   context: context,
                   child: LayoutPage(
-                    child: e.child,
                     description: e.description,
                     title: e.title,
+                    child: e.child,
                   ),
                 ),
               ),

@@ -18,23 +18,20 @@ class LayoutPage extends StatefulWidget {
 }
 
 class _LayoutPageState extends State<LayoutPage> {
-  late bool isMobile;
+  late bool isMobileView;
   late bool isPerspectiveButtonVisible;
 
   @override
   void initState() {
-    isMobile = true;
+    isMobileView = true;
     isPerspectiveButtonVisible =
         !(defaultTargetPlatform == TargetPlatform.android ||
             defaultTargetPlatform == TargetPlatform.iOS);
 
-    if (WidgetsBinding.instance.window.physicalSize.width <= 600) {
-      isPerspectiveButtonVisible = false;
-    }
     super.initState();
   }
 
-  void changeWidth() => setState(() => {isMobile = !isMobile});
+  void changeWidth() => setState(() => {isMobileView = !isMobileView});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +43,7 @@ class _LayoutPageState extends State<LayoutPage> {
           children: [
             Center(
                 child: SizedBox(
-              width: isMobile ? 500 : null,
+              width: isMobileView ? 500 : null,
               child: widget.child,
             )),
             Positioned(left: 8, top: 8, child: backButton(context)),
@@ -61,11 +58,11 @@ class _LayoutPageState extends State<LayoutPage> {
   FloatingActionButton perspectiveButton() {
     return FloatingActionButton.small(
       heroTag: null,
-      tooltip: isMobile ? 'View from computer' : 'View from mobile',
+      tooltip: isMobileView ? 'View from computer' : 'View from mobile',
       backgroundColor: Colors.white,
       onPressed: () => changeWidth(),
       child: Icon(
-        isMobile ? Icons.laptop_chromebook : Icons.phone_android,
+        isMobileView ? Icons.laptop_chromebook : Icons.phone_android,
         color: Colors.black,
       ),
     );
