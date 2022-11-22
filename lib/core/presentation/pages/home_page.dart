@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_ui_challenges/core/utils.dart';
 
 import 'package:flutter_ui_challenges/core/constants.dart';
 import 'package:flutter_ui_challenges/core/presentation/pages/challenges_list_page.dart';
@@ -82,16 +81,5 @@ class HomePage extends StatelessWidget {
               'Start',
               style: TextStyle(fontSize: 18),
             )));
-  }
-
-  void openExternalLink(Map<String, String> uriParameters) async {
-    final Uri uri = Uri(
-        scheme: uriParameters["scheme"],
-        host: uriParameters["host"],
-        path: uriParameters["path"]);
-
-    if (await canLaunchUrl(uri)) {
-      launchUrl(uri, mode: LaunchMode.externalApplication);
-    }
   }
 }
