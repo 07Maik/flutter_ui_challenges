@@ -1,80 +1,74 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_challenges/core/data/models/route_model.dart'
+    show DesignDeviceType;
 
-class LayoutPage extends StatefulWidget {
+class LayoutPage extends StatelessWidget {
   final Widget child;
   final String title;
   final String description;
+  final DesignDeviceType deviceType;
 
-  const LayoutPage({
-    Key? key,
-    required this.child,
-    required this.title,
-    required this.description,
-  }) : super(key: key);
-
-  @override
-  State<LayoutPage> createState() => _LayoutPageState();
-}
-
-class _LayoutPageState extends State<LayoutPage> {
-  late bool isMobileView;
-  late bool isPerspectiveButtonVisible;
-
-  @override
-  void initState() {
-    isMobileView = true;
-    isPerspectiveButtonVisible =
-        !(defaultTargetPlatform == TargetPlatform.android ||
-            defaultTargetPlatform == TargetPlatform.iOS);
-
-    super.initState();
-  }
-
-  void changeWidth() => setState(() => {isMobileView = !isMobileView});
+  const LayoutPage(
+      {Key? key,
+      required this.child,
+      required this.title,
+      required this.description,
+      required this.deviceType})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black87,
       body: SafeArea(
         child: Stack(
           alignment: Alignment.center,
           children: [
-            Center(
-                child: SizedBox(
-              width: isMobileView ? 500 : null,
-              child: widget.child,
-            )),
-            Positioned(left: 8, top: 8, child: backButton(context)),
-            if (isPerspectiveButtonVisible)
-              Positioned(right: 8, top: 8, child: perspectiveButton())
+            layoutChild(),
+            Positioned(left: -9, top: -9, child: backButton(context)),
           ],
         ),
       ),
     );
   }
 
-  FloatingActionButton perspectiveButton() {
-    return FloatingActionButton.small(
-      heroTag: null,
-      tooltip: isMobileView ? 'View from computer' : 'View from mobile',
-      backgroundColor: Colors.white,
-      onPressed: () => changeWidth(),
-      child: Icon(
-        isMobileView ? Icons.laptop_chromebook : Icons.phone_android,
-        color: Colors.black,
-      ),
-    );
+  Center layoutChild() {
+    late double width;
+    late double height;
+
+    switch (deviceType) {
+      case DesignDeviceType.mobile:
+        width = 450;
+        height = 800;
+
+        break;
+
+      case DesignDeviceType.tablet:
+        width = 750;
+        height = 1100;
+
+        break;
+      default:
+    }
+
+    return Center(
+        child: SizedBox(
+      width: width,
+      height: height,
+      child: child,
+    ));
   }
 
-  FloatingActionButton backButton(BuildContext context) {
-    return FloatingActionButton.small(
-      heroTag: null,
-      tooltip: 'Back',
-      backgroundColor: Colors.white,
-      onPressed: () => Navigator.pop(context),
-      child: const Icon(Icons.arrow_back, color: Colors.black),
-    );
+  Widget backButton(BuildContext context) {
+    return IconButton(
+        tooltip: 'Back',
+        onPressed: () => Navigator.pop(context),
+        icon: Container(
+            padding: const EdgeInsets.all(5),
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
+              color: Colors.black,
+            ),
+            child:
+                const Icon(Icons.arrow_back, size: 14, color: Colors.white)));
   }
 }

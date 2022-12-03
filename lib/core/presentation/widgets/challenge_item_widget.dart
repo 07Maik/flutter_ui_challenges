@@ -25,9 +25,8 @@ class ChallengeItem extends StatelessWidget {
           shadowColor: Colors.grey[50],
           elevation: 5,
           margin: const EdgeInsets.symmetric(vertical: 10),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           color: Colors.grey[200],
           child: ListTile(
             contentPadding: const EdgeInsets.all(15),

@@ -64,6 +64,7 @@ class _ChallengesListPageState extends State<ChallengesListPage> {
                   child: LayoutPage(
                     description: e.description,
                     title: e.title,
+                    deviceType: e.deviceType,
                     child: e.child,
                   ),
                 ),

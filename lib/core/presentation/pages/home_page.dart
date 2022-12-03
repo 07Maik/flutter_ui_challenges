@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
 
   Widget backgroundImage() => const Image(
       height: 350,
-      image: AssetImage('assets/images/background_flutter_dev.png'));
+      image: AssetImage('assets/background_flutter_dev.png'));
 
   Widget linksSocialMedia() {
     return Container(
@@ -50,13 +50,13 @@ class HomePage extends StatelessWidget {
             child: const CircleAvatar(
               radius: 25,
               backgroundColor: Colors.white,
-              backgroundImage: AssetImage('assets/icons/gitHub.png'),
+              backgroundImage: AssetImage('assets/icon_gitHub.png'),
             ),
           ),
           const SizedBox(width: 50),
           MaterialButton(
             onPressed: () => openExternalLink(linkedIn),
-            child: Image.asset('assets/icons/LI-In-Bug.png', height: 50),
+            child: Image.asset('assets/icon_LI-In-Bug.png', height: 50),
           ),
         ],
       ),
