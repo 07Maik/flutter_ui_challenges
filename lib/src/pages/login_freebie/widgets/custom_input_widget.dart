@@ -26,8 +26,7 @@ class CustomInput extends StatelessWidget {
             fontSize: 18,
             color: Color(0xff3E4A59),
             fontWeight: FontWeight.w300),
-        labelStyle: TextStyle(
-            fontSize: 14, color: Colors.grey[400]),
+        labelStyle: TextStyle(fontSize: 14, color: Colors.grey[400]),
         focusedBorder: const UnderlineInputBorder(
             borderSide: BorderSide(
           color: decorationColor,

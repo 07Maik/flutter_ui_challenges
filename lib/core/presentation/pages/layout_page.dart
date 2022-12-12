@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_ui_challenges/core/data/models/route_model.dart'
     show DesignDeviceType;
 
 class LayoutPage extends StatelessWidget {
   final Widget child;
-  final String title;
-  final String description;
   final DesignDeviceType deviceType;
 
-  const LayoutPage(
-      {Key? key,
-      required this.child,
-      required this.title,
-      required this.description,
-      required this.deviceType})
+  const LayoutPage({Key? key, required this.child, required this.deviceType})
       : super(key: key);
 
   @override

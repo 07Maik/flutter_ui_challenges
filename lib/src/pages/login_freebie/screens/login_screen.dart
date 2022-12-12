@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
+import 'package:flutter_ui_challenges/core/presentation/widgets/custom_route_transitions.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -102,8 +104,9 @@ class LoginScreen extends StatelessWidget {
               padding: EdgeInsets.zero,
               visualDensity: const VisualDensity(horizontal: -4),
             ),
-            onPressed: (() => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const SignUpScreen()))),
+            onPressed: (() => CustomRouteTransitions(
+                    child: const SignUpScreen(), context: context)
+                .navigateTransitionOnLayout(DesignDeviceType.mobile)),
             child: const Text(
               'SignUp',
               style: TextStyle(

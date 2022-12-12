@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
+import 'package:flutter_ui_challenges/core/presentation/pages/layout_page.dart';
+
 class CustomRouteTransitions {
   final Widget child;
-  final Duration duration;
   final BuildContext context;
 
   CustomRouteTransitions({
     required this.context,
     required this.child,
-    this.duration = const Duration(milliseconds: 500),
-  }) {
-    _navigateTransition();
-  }
+  });
 
-  void _navigateTransition() {
+  static const duration = Duration(milliseconds: 500);
+
+  PageRouteBuilder customRoute(Widget view) {
     final route = PageRouteBuilder(
-        pageBuilder: (_, __, ___) => child,
+        pageBuilder: (_, __, ___) => view,
         transitionDuration: duration,
         transitionsBuilder: (_, animation, __, child) {
           return FadeTransition(
@@ -25,6 +26,28 @@ class CustomRouteTransitions {
           );
         });
 
-    Navigator.push(context, route);
+    return route;
+  }
+
+  void navigateTransition([bool isReplacement = false]) {
+    if (isReplacement) {
+      Navigator.pushReplacement(context, customRoute(child));
+    } else {
+      Navigator.push(context, customRoute(child));
+    }
+  }
+
+  void navigateTransitionOnLayout(DesignDeviceType designDeviceType,
+      [bool isReplacement = false]) {
+    final view = LayoutPage(
+      deviceType: designDeviceType,
+      child: child,
+    );
+
+    if (isReplacement) {
+      Navigator.pushReplacement(context, customRoute(view));
+    } else {
+      Navigator.push(context, customRoute(view));
+    }
   }
 }

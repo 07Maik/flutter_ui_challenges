@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
 
-import 'package:flutter_ui_challenges/core/presentation/pages/layout_page.dart';
 import 'package:flutter_ui_challenges/core/presentation/widgets/custom_route_transitions.dart';
 import 'package:flutter_ui_challenges/core/presentation/routes.dart';
 
@@ -33,45 +32,46 @@ class _ChallengesListPageState extends State<ChallengesListPage> {
         ? ChallengeCategory.screen
         : ChallengeCategory.appClone;
 
-    _routes = routes.where((element) => element.category == category).toList();
-    setState(() {});
+    setState(() {
+      _routes =
+          routes.where((element) => element.category == category).toList();
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            elevation: 0,
-            backgroundColor: Colors.white,
-            foregroundColor: Colors.black,
-            title: const Text(
-              'UI Challenges',
-              style: TextStyle(color: Colors.black, fontSize: 25),
-            ),
-            centerTitle: true),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0,
         backgroundColor: Colors.white,
-        body: ListView(
-          padding: const EdgeInsets.all(10),
-          children: [
-            challengeFilter(),
-            ..._routes.map(
-              (e) => ChallengeItem(
-                description: e.description,
-                title: e.title,
-                designSource: e.designSource,
-                function: () => CustomRouteTransitions(
-                  context: context,
-                  child: LayoutPage(
-                    description: e.description,
-                    title: e.title,
-                    deviceType: e.deviceType,
-                    child: e.child,
-                  ),
-                ),
-              ),
-            )
-          ],
-        ));
+        foregroundColor: Colors.black,
+        centerTitle: true,
+        title: const Text(
+          'UI Challenges',
+          style: TextStyle(color: Colors.black, fontSize: 25),
+        ),
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(10),
+        children: [challengeFilter(), ...listProjects(context)],
+      ),
+    );
+  }
+
+  Iterable<Widget> listProjects(BuildContext context) {
+    return _routes.map(
+      (e) => ChallengeItem(
+          description: e.description,
+          title: e.title,
+          designSource: e.designSource,
+          function: () {
+            CustomRouteTransitions(
+              context: context,
+              child: e.child,
+            ).navigateTransitionOnLayout(e.deviceType);
+          }),
+    );
   }
 
   Widget challengeFilter() {

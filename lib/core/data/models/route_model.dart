@@ -16,8 +16,8 @@ class RouteModel {
     required this.title,
     required this.description,
     required this.child,
-    required this.deviceType,
     this.designSource,
+    this.deviceType = DesignDeviceType.mobile,
     this.category = ChallengeCategory.screen,
   });
 }

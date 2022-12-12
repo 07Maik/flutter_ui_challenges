@@ -71,7 +71,7 @@ class HomePage extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         onPressed: () {
           CustomRouteTransitions(
-              context: context, child: const ChallengesListPage());
+              context: context, child: const ChallengesListPage()).navigateTransition();
         },
         child: Container(
             alignment: Alignment.center,
