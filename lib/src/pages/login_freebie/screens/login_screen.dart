@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
-import 'package:flutter_ui_challenges/core/presentation/widgets/custom_route_transitions.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
+import 'package:flutter_ui_challenges/core/presentation/widgets/custom_route_transitions.dart';
 
 import 'package:flutter_ui_challenges/src/pages/login_freebie/screens/sign_up_screen.dart';
 import 'package:flutter_ui_challenges/src/pages/login_freebie/widgets/custom_input_widget.dart';
@@ -19,13 +20,11 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: SafeArea(
-        child: Column(children: [
-          btnArrowBack(),
-          lblMessage(),
-          form(context),
-        ]),
-      ),
+      body: ListView(children: [
+        btnArrowBack(),
+        lblMessage(),
+        form(context),
+      ]),
     );
   }
 

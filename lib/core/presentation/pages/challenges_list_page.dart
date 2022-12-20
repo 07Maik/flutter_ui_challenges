@@ -54,7 +54,10 @@ class _ChallengesListPageState extends State<ChallengesListPage> {
       ),
       body: ListView(
         padding: const EdgeInsets.all(10),
-        children: [challengeFilter(), ...listProjects(context)],
+        children: [
+          challengeFilter(),
+          ...listProjects(context),
+        ],
       ),
     );
   }
@@ -67,9 +70,10 @@ class _ChallengesListPageState extends State<ChallengesListPage> {
           designSource: e.designSource,
           function: () {
             CustomRouteTransitions(
-              context: context,
-              child: e.child,
-            ).navigateTransitionOnLayout(e.deviceType);
+                    context: context,
+                    child: e.child,
+                    duration: const Duration(milliseconds: 0))
+                .navigateTransitionOnLayout(e.deviceType);
           }),
     );
   }

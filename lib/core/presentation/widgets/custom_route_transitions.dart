@@ -6,13 +6,12 @@ import 'package:flutter_ui_challenges/core/presentation/pages/layout_page.dart';
 class CustomRouteTransitions {
   final Widget child;
   final BuildContext context;
+  final Duration duration;
 
-  CustomRouteTransitions({
-    required this.context,
-    required this.child,
-  });
-
-  static const duration = Duration(milliseconds: 500);
+  CustomRouteTransitions(
+      {required this.context,
+      required this.child,
+      this.duration = const Duration(milliseconds: 500)});
 
   PageRouteBuilder customRoute(Widget view) {
     final route = PageRouteBuilder(

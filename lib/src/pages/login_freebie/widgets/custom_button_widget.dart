@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
+import 'package:flutter_ui_challenges/core/presentation/widgets/custom_route_transitions.dart';
+
+import '../screens/login_screen.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -14,12 +18,16 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
         style: TextButton.styleFrom(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             foregroundColor: Colors.white,
             backgroundColor: primaryColor,
             elevation: 25,
             shadowColor: Colors.black54),
-        onPressed: (() {}),
+        onPressed: (() {
+          CustomRouteTransitions(child: const LoginScreen(), context: context)
+              .navigateTransitionOnLayout(DesignDeviceType.mobile);
+        }),
         child: Container(
             alignment: Alignment.center,
             width: double.infinity,

@@ -47,7 +47,7 @@ class HomeScreen extends StatelessWidget {
   }
 
   Padding header() => Padding(
-        padding: const EdgeInsets.only(right: 30.0, top: 60, bottom: 10),
+        padding: const EdgeInsets.only(right: 30.0, top: 20, bottom: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: const [
@@ -61,6 +61,7 @@ class HomeScreen extends StatelessWidget {
   Padding menuItems() => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 10),
         child: ListView.separated(
+          physics: const BouncingScrollPhysics(),
           itemCount: menu.length,
           itemBuilder: (BuildContext context, int index) => cardMenu(index),
           separatorBuilder: (_, __) => const SizedBox(height: 20),

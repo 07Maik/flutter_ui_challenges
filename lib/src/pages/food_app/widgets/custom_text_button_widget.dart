@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
+
 import 'package:flutter_ui_challenges/core/presentation/widgets/custom_route_transitions.dart';
 
 import '../screens/splash_screen.dart';
