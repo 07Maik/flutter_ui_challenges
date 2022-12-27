@@ -14,9 +14,11 @@ class CustomTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () =>
-          CustomRouteTransitions(context: context, child: const SplashScreen())
-              .navigateTransitionOnLayout(DesignDeviceType.mobile),
+      onPressed: () => CustomRouteTransitions(
+              context: context,
+              child: const SplashScreen(),
+              duration: const Duration(milliseconds: 500))
+          .navigateTransitionOnLayout(DesignDeviceType.mobile),
       style: TextButton.styleFrom(
           backgroundColor: const Color(0xffd10b00),
           foregroundColor: Colors.white,

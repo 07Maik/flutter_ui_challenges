@@ -28,6 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
     //Navigation to Home Page    
     Future.delayed(const Duration(milliseconds: 1500), () {
       CustomRouteTransitions(
+        duration: const Duration(milliseconds: 500),
         context: context,
         child: const HomeScreen(),
       ).navigateTransitionOnLayout(DesignDeviceType.mobile, true);

@@ -3,7 +3,9 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/gestures.dart';
 
 import 'package:flutter/material.dart';
-// import 'package:flutter_ui_challenges/src/pages/sushi_app/screens/home_page.dart';
+
+// import 'package:flutter_ui_challenges/src/pages/chat_app/screens/chat_screen.dart';
+
 // import 'package:flutter_ui_challenges/src/pages/sushi_app/screens/food_dish_detail_page.dart';
 import 'package:flutter_ui_challenges/core/presentation/pages/home_page.dart';
 
@@ -26,11 +28,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      scrollBehavior: MyScrollBehavior(),
+    return MaterialApp(
+      scrollBehavior: const MyScrollBehavior(),
       debugShowCheckedModeBanner: false,
       home: HomePage()
-      // home: FoodDishDetail(),
+      // home: ChatScreen(idUser: 'userB',),
     );
   }
 }

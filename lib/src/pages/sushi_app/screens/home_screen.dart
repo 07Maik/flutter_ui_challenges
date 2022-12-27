@@ -66,7 +66,7 @@ class HomePage extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         image: const DecorationImage(
             image: NetworkImage(
-                'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg'),
+                'https://res.cloudinary.com/dg6ag2cyo/image/upload/v1672068542/flutter_ui/pexels-pixabay-220453_ce1kx9.jpg'),
             fit: BoxFit.cover),
       ),
     );

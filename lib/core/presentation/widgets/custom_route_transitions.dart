@@ -8,10 +8,11 @@ class CustomRouteTransitions {
   final BuildContext context;
   final Duration duration;
 
-  CustomRouteTransitions(
-      {required this.context,
-      required this.child,
-      this.duration = const Duration(milliseconds: 500)});
+  CustomRouteTransitions({
+    required this.context,
+    required this.child,
+    required this.duration,
+  });
 
   PageRouteBuilder customRoute(Widget view) {
     final route = PageRouteBuilder(

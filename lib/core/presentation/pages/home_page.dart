@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_challenges/core/utils.dart';
 
+import 'package:flutter_ui_challenges/core/utils.dart';
 import 'package:flutter_ui_challenges/core/constants.dart';
+
 import 'package:flutter_ui_challenges/core/presentation/pages/challenges_list_page.dart';
 import 'package:flutter_ui_challenges/core/presentation/widgets/custom_route_transitions.dart';
 
@@ -71,6 +72,7 @@ class HomePage extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         onPressed: () {
           CustomRouteTransitions(
+            duration: const Duration(milliseconds: 500),
               context: context, child: const ChallengesListPage()).navigateTransition();
         },
         child: Container(

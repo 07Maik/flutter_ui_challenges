@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+
+import 'package:google_fonts/google_fonts.dart';
+
 import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
 import 'package:flutter_ui_challenges/core/presentation/widgets/custom_route_transitions.dart';
-import 'package:flutter_ui_challenges/src/pages/sushi_app/screens/food_dish_detail_page.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_ui_challenges/src/pages/sushi_app/screens/food_dish_detail_screen.dart';
 
 import '../models/popular_menu_model.dart';
 import 'rating_widget.dart';
@@ -98,6 +100,7 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
       child: GestureDetector(
         onTap: (() {
           CustomRouteTransitions(
+            duration: const Duration(milliseconds: 500),
             context: context,
             child: FoodDishDetail(dishModel: model),
           ).navigateTransitionOnLayout(DesignDeviceType.mobile);

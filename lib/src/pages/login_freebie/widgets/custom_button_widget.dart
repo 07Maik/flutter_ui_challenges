@@ -25,7 +25,10 @@ class CustomButton extends StatelessWidget {
             elevation: 25,
             shadowColor: Colors.black54),
         onPressed: (() {
-          CustomRouteTransitions(child: const LoginScreen(), context: context)
+          CustomRouteTransitions(
+                  duration: const Duration(milliseconds: 500),
+                  child: const LoginScreen(),
+                  context: context)
               .navigateTransitionOnLayout(DesignDeviceType.mobile);
         }),
         child: Container(

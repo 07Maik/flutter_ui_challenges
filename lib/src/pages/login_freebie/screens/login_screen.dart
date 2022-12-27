@@ -104,7 +104,9 @@ class LoginScreen extends StatelessWidget {
               visualDensity: const VisualDensity(horizontal: -4),
             ),
             onPressed: (() => CustomRouteTransitions(
-                    child: const SignUpScreen(), context: context)
+                    duration: const Duration(milliseconds: 500),
+                    child: const SignUpScreen(),
+                    context: context)
                 .navigateTransitionOnLayout(DesignDeviceType.mobile)),
             child: const Text(
               'SignUp',
