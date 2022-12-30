@@ -14,7 +14,7 @@ class MessageNotification extends StatelessWidget {
             height: 40,
             alignment: Alignment.centerRight,
             decoration: BoxDecoration(
-                color: Color(0xff251d2f),
+                color: const Color(0xff251d2f),
                 borderRadius: BorderRadius.circular(8)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

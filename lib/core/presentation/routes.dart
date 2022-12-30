@@ -1,6 +1,7 @@
 import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
 
-import 'package:flutter_ui_challenges/src/pages/chat_app/screens/chat_list_screen.dart' as chat_app;
+import 'package:flutter_ui_challenges/src/pages/chat_app/screens/chat_list_screen.dart'
+    as chat_app;
 
 import 'package:flutter_ui_challenges/src/pages/food_app/screens/login_screen.dart'
     as food_app;
@@ -10,6 +11,9 @@ import 'package:flutter_ui_challenges/src/pages/login_freebie/screens/sign_up_sc
 
 import 'package:flutter_ui_challenges/src/pages/sushi_app/screens/home_screen.dart'
     as sushi_app;
+
+import 'package:flutter_ui_challenges/src/pages/task_todolist/screens/task_screen.dart'
+    as task_todolist;
 
 final routes = <RouteModel>[
   RouteModel(
@@ -54,5 +58,16 @@ final routes = <RouteModel>[
       "path": 'posts/chat-app-design-f094e061-0fc1-4bbd-9424-9e5aaf3fbc5c/'
     },
     child: const chat_app.ChatListScreen(),
+  ),
+  RouteModel(
+    title: 'Task TodoList',
+    description:
+        'There are three screens: one to splash screen, one to make login and one to see the food menu options.',
+    designSource: {
+      "scheme": "https",
+      "host": 'www.uplabs.com',
+      "path": 'posts/task-todolist/'
+    },
+    child: const task_todolist.TaskScreen(),
   ),
 ];

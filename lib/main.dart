@@ -4,10 +4,8 @@ import 'package:flutter/gestures.dart';
 
 import 'package:flutter/material.dart';
 
-// import 'package:flutter_ui_challenges/src/pages/chat_app/screens/chat_screen.dart';
-
-// import 'package:flutter_ui_challenges/src/pages/sushi_app/screens/food_dish_detail_page.dart';
 import 'package:flutter_ui_challenges/core/presentation/pages/home_page.dart';
+// import 'package:flutter_ui_challenges/src/pages/task_todolist/screens/task_screen.dart';
 
 import 'package:window_size/window_size.dart';
 
@@ -28,12 +26,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      scrollBehavior: const MyScrollBehavior(),
-      debugShowCheckedModeBanner: false,
-      home: HomePage()
-      // home: ChatScreen(idUser: 'userB',),
-    );
+    return const MaterialApp(
+        scrollBehavior: MyScrollBehavior(),
+        debugShowCheckedModeBanner: false,
+        home: HomePage()
+        // home: TaskScreen(),
+        );
   }
 }
 
