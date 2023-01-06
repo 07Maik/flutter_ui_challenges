@@ -15,6 +15,9 @@ import 'package:flutter_ui_challenges/src/pages/sushi_app/screens/home_screen.da
 import 'package:flutter_ui_challenges/src/pages/task_todolist/screens/task_screen.dart'
     as task_todolist;
 
+import 'package:flutter_ui_challenges/src/pages/clothes_shopping/screens/home_screen.dart'
+    as clothes_shopping;
+
 final routes = <RouteModel>[
   RouteModel(
     title: 'Login Freebie',
@@ -69,5 +72,16 @@ final routes = <RouteModel>[
       "path": 'posts/task-todolist/'
     },
     child: const task_todolist.TaskScreen(),
+  ),
+  RouteModel(
+    title: 'Clothing Shopping',
+    description:
+        'There are three screens: one to splash screen, one to make login and one to see the food menu options.',
+    designSource: {
+      "scheme": "https",
+      "host": 'dribbble.com',
+      "path": 'shots/19944979-Cloths-Shopping-App-Design/'
+    },
+    child: const clothes_shopping.HomeScreen(),
   ),
 ];

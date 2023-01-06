@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
-import '../providers/slide_show_model.dart';
+import '../providers/slide_show.dart';
 import 'dot_widget.dart';
 
 class SliderSignUp extends StatefulWidget {
@@ -18,7 +18,7 @@ class _SliderSignUpState extends State<SliderSignUp> {
 
   @override
   void initState() {
-    final provider = Provider.of<SlideShowModel>(context, listen: false);
+    final provider = Provider.of<SlideShow>(context, listen: false);
 
     controller
         .addListener(() => provider.currentPage = controller.page!.round());

@@ -14,9 +14,9 @@ class CustomBottomMenu extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-              color: Colors.grey.shade400,
-              blurRadius: 3,
-              offset: const Offset(1, -1))
+              color: Colors.grey.shade300,
+              blurRadius: 2,
+              offset: const Offset(0, -1))
         ],
         borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(15), topRight: Radius.circular(15)),

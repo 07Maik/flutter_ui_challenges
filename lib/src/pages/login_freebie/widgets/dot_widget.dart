@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
-import '../providers/slide_show_model.dart';
+import '../providers/slide_show.dart';
 
 class Dot extends StatelessWidget {
   final int index;
@@ -14,7 +14,7 @@ class Dot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<SlideShowModel>(context);
+    final provider = Provider.of<SlideShow>(context);
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 2),

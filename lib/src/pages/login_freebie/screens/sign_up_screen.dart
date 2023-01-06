@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../providers/slide_show_model.dart';
+import '../providers/slide_show.dart';
 import '../widgets/custom_button_widget.dart';
 import '../widgets/slider_widget.dart';
 
@@ -15,7 +15,7 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => SlideShowModel(),
+      create: (context) => SlideShow(),
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Column(
