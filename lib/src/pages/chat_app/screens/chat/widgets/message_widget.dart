@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../../constants.dart';
 
 class Message extends StatelessWidget {
   final String message;
   final bool isMyMessage;
   final DateTime date;
+
   const Message(
       {super.key,
       required this.date,
@@ -23,8 +27,9 @@ class Message extends StatelessWidget {
               : const EdgeInsets.only(top: 10, bottom: 5),
           width: double.infinity,
           decoration: BoxDecoration(
-            color:
-                isMyMessage ? const Color(0xff1e1940) : const Color(0xff1f1c32),
+            color: isMyMessage
+                ? Constants.backgroundMessageColor1
+                : Constants.backgroundMessageColor2,
             borderRadius: isMyMessage
                 ? const BorderRadius.only(
                     topLeft: Radius.circular(8),
@@ -35,17 +40,20 @@ class Message extends StatelessWidget {
                     bottomLeft: Radius.circular(8),
                     bottomRight: Radius.circular(8)),
           ),
-          child: Text(
-            message,
-            style: GoogleFonts.archivo(color: Colors.grey[300], fontWeight: FontWeight.w500)//const TextStyle(color: Colors.white),
-          ),
+          child: Text(message,
+              style: GoogleFonts.archivo(
+                  color: Colors.grey[300],
+                  fontWeight:
+                      FontWeight.w500) //const TextStyle(color: Colors.white),
+              ),
         ),
         if (!isMyMessage)
           Container(
             margin: const EdgeInsets.only(bottom: 10),
             child: Text(
               "Report   ${getTime()}",
-              style: const TextStyle(color: Colors.white70, fontSize: 10),
+              style: const TextStyle(
+                  color: Constants.secondaryTextColor, fontSize: 10),
             ),
           )
       ],

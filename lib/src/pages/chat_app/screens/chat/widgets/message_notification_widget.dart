@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../constants.dart';
+
 class MessageNotification extends StatelessWidget {
   const MessageNotification({
     Key? key,
@@ -14,14 +16,14 @@ class MessageNotification extends StatelessWidget {
             height: 40,
             alignment: Alignment.centerRight,
             decoration: BoxDecoration(
-                color: const Color(0xff251d2f),
+                color: Constants.secondaryColor,
                 borderRadius: BorderRadius.circular(8)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 const Icon(
                   Icons.warning_rounded,
-                  color: Colors.orange,
+                  color: Constants.highLightColor,
                   size: 30,
                 ),
                 Container(
@@ -29,12 +31,16 @@ class MessageNotification extends StatelessWidget {
                   child: const Text(
                     "All the chats will be monitored",
                     style: TextStyle(
-                        color: Color(0xffff9100),
+                        color: Constants.highLightColor,
                         fontSize: 14,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-                const Icon(Icons.close, color: Colors.white70, size: 20)
+                const Icon(
+                  Icons.close,
+                  color: Constants.secondaryTextColor,
+                  size: 20,
+                )
               ],
             ),
           ),

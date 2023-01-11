@@ -27,19 +27,33 @@ class Rating extends StatelessWidget {
     const starColor = Color(0xfffeab0a);
     const starSize = 14.0;
 
-    final List<Icon> stars = List.generate(rate.toInt(),
-            (index) => const Icon(Icons.star, color: starColor, size: starSize))
-        .toList();
+    final List<Icon> stars = List.generate(
+        rate.toInt(),
+        (index) => const Icon(
+              Icons.star,
+              color: starColor,
+              size: starSize,
+            )).toList();
 
     if (stars.length < _maxStar && stars.length != rate) {
-      stars.add(const Icon(Icons.star_half, color: starColor, size: starSize));
+      stars.add(const Icon(
+        Icons.star_half,
+        color: starColor,
+        size: starSize,
+      ));
     }
 
     if (stars.length < _maxStar) {
-      stars.addAll(List.generate(
+      stars.addAll(
+        List.generate(
           5 - stars.length,
-          (index) => const Icon(Icons.star,
-              color: Color(0xffd9dbe1), size: starSize)));
+          (index) => const Icon(
+            Icons.star,
+            color: Color(0xffd9dbe1),
+            size: starSize,
+          ),
+        ),
+      );
     }
 
     return stars.sublist(0, _maxStar);

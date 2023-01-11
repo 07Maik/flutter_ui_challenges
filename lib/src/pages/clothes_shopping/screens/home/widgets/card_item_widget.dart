@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
 
 import 'package:flutter_ui_challenges/core/presentation/widgets/custom_route_transitions.dart';
 
-import '../screens/detail_screen.dart';
-import '../model/item_shopping_model.dart';
+import '../../../constants.dart';
+import '../../item/detail_screen.dart';
+import '../../../model/item_shopping_model.dart';
 
 class CardItem extends StatelessWidget {
   final ItemShoppingModel item;
@@ -27,28 +29,31 @@ class CardItem extends StatelessWidget {
               Container(
                 height: 160,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Color(item.colorBackground),
-                    image: DecorationImage(
-                        fit: BoxFit.fitHeight,
-                        image: NetworkImage(item.pathImage))),
+                  borderRadius: BorderRadius.circular(15),
+                  color: Color(item.colorBackground),
+                  image: DecorationImage(
+                    fit: BoxFit.fitHeight,
+                    image: NetworkImage(item.pathImage),
+                  ),
+                ),
               ),
               const Positioned(
                 right: 16,
                 top: 16,
                 child: CircleAvatar(
-                    radius: 10,
-                    backgroundColor: Colors.black,
-                    foregroundColor: Colors.white,
-                    child: Icon(
-                      Icons.thumb_up_alt_outlined,
-                      size: 10,
-                    )),
+                  radius: 10,
+                  backgroundColor: Constants.secondColor,
+                  foregroundColor: Constants.primaryColor,
+                  child: Icon(Icons.thumb_up_alt_outlined, size: 10),
+                ),
               )
             ],
           ),
           const SizedBox(height: 10),
-          Text(item.brand, style: const TextStyle(fontWeight: FontWeight.bold)),
+          Text(
+            item.brand,
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
           Text(
             item.generalDescription,
             style: const TextStyle(fontSize: 12, color: Colors.black54),

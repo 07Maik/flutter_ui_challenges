@@ -1,17 +1,20 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+
 import 'package:flutter/services.dart';
+
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
 import 'package:flutter_ui_challenges/core/presentation/widgets/custom_route_transitions.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import '../data.dart';
-import '../model/chat_model.dart';
-import '../widgets/float_buttom_widget.dart';
-import '../widgets/profile_avatar_widget.dart';
-import 'chat_screen.dart';
+import '../../constants.dart';
+import '../../model/chat_model.dart';
+import '../../widgets/profile_avatar_widget.dart';
+import '../chat/chat_screen.dart';
+
+import 'widgets/float_buttom_widget.dart';
 
 class ChatListScreen extends StatefulWidget {
   const ChatListScreen({super.key});
@@ -21,12 +24,16 @@ class ChatListScreen extends StatefulWidget {
 }
 
 class _ChatListScreenState extends State<ChatListScreen> {
+  late List<ChatModel> chats;
   @override
   void initState() {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Color(0xff0c0921),
       statusBarIconBrightness: Brightness.light,
     ));
+
+    chats = ChatModel.getChats();
+
     super.initState();
   }
 
@@ -44,12 +51,15 @@ class _ChatListScreenState extends State<ChatListScreen> {
     return Scaffold(
       backgroundColor: const Color(0xff0c0921),
       body: SafeArea(
-        child: Column(
-          children: [
-            header(),
-            searchBar(),
-            Expanded(child: chatList()),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: Constants.kPadding),
+          child: Column(
+            children: [
+              header(),
+              searchBar(),
+              Expanded(child: chatList()),
+            ],
+          ),
         ),
       ),
       floatingActionButton: const FloatButtom(),
@@ -58,8 +68,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
 
   Widget header() {
     return Padding(
-      padding:
-          const EdgeInsets.only(right: 30.0, left: 30.0, top: 25, bottom: 15),
+      padding: const EdgeInsets.only(top: 25, bottom: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -84,7 +93,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
 
     return Container(
       alignment: Alignment.bottomRight,
-      padding: const EdgeInsets.only(left: 30, right: 30, bottom: 15),
+      padding: const EdgeInsets.only(bottom: 15),
       child: TextField(
         selectionHeightStyle: BoxHeightStyle.tight,
         style: const TextStyle(color: Colors.white),
@@ -110,24 +119,21 @@ class _ChatListScreenState extends State<ChatListScreen> {
 
   Widget chatList() {
     return ListView.separated(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
       physics: const BouncingScrollPhysics(),
       itemCount: chats.length,
       itemBuilder: (BuildContext context, int index) {
         final chat = chats[index];
 
         return InkWell(
-          onTap: (() {
-            CustomRouteTransitions(
-                    context: context,
-                    child: ChatScreen(
-                        idUser: chat.id,
-                        urlImage: chat.urlImage,
-                        isOnline: chat.isOnline,
-                        name: chat.name),
-                    duration: const Duration(milliseconds: 0))
-                .navigateTransitionOnLayout(DesignDeviceType.mobile);
-          }),
+          onTap: (() => CustomRouteTransitions(
+                  context: context,
+                  child: ChatScreen(
+                      idUser: chat.id,
+                      urlImage: chat.urlImage,
+                      isOnline: chat.isOnline,
+                      name: chat.name),
+                  duration: const Duration(milliseconds: 0))
+              .navigateTransitionOnLayout(DesignDeviceType.mobile)),
           child: SizedBox(
             height: 50,
             child: Row(
@@ -192,11 +198,11 @@ class _ChatListScreenState extends State<ChatListScreen> {
         if (chat.messagesUnread != null)
           Container(
             margin: const EdgeInsets.only(top: 5),
-            padding: const EdgeInsets.all(3),
+            padding: const EdgeInsets.all(4),
             alignment: Alignment.center,
             width: 30,
             decoration: BoxDecoration(
-              color: const Color(0xffff7700),
+              color: Constants.highLightColor,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Text(

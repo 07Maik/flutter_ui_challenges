@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Filter extends StatelessWidget {
-  const Filter({super.key});
+import '../../../constants.dart';
+
+class CategoryFilter extends StatelessWidget {
+  const CategoryFilter({super.key});
 
   static const List<String> filterMenu = [
     "Dresses",
@@ -22,14 +24,15 @@ class Filter extends StatelessWidget {
         itemCount: filterMenu.length,
         itemBuilder: (context, index) {
           return Container(
+            alignment: Alignment.center,
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             margin: EdgeInsets.only(
               left: index == 0 ? 28 : 16,
               right: index + 1 == filterMenu.length ? 28 : 0,
             ),
-            alignment: Alignment.center,
-            padding: const EdgeInsets.symmetric(horizontal: 20),
             decoration: BoxDecoration(
-              color: index == 0 ? Colors.black : Colors.white,
+              color:
+                  index == 0 ? Constants.secondColor : Constants.primaryColor,
               borderRadius: BorderRadius.circular(25),
               border: Border.all(color: Colors.black12, width: 1.5),
             ),
@@ -37,7 +40,8 @@ class Filter extends StatelessWidget {
               filterMenu[index],
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: index == 0 ? Colors.white : Colors.black,
+                color:
+                    index == 0 ? Constants.primaryColor : Constants.secondColor,
               ),
             ),
           );

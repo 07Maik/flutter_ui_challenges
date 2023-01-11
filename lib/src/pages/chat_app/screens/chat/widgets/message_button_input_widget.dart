@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../constants.dart';
+
 class MessageButtonInput extends StatelessWidget {
   final IconData icon;
   const MessageButtonInput({
@@ -10,10 +12,10 @@ class MessageButtonInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
+      onPressed: () => {},
       minWidth: 1,
       shape: const CircleBorder(),
-      onPressed: () => {},
-      child: Icon(icon, color: Colors.white70, size: 22),
+      child: Icon(icon, color: Constants.secondaryTextColor, size: 22),
     );
   }
 }

@@ -4,11 +4,12 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter_ui_challenges/src/pages/chat_app/model/message_model.dart';
 
-import '../provider/chat_messages.dart';
-import '../widgets/message_button_input_widget.dart';
-import '../widgets/message_notification_widget.dart';
-import '../widgets/message_widget.dart';
-import '../widgets/profile_avatar_widget.dart';
+import '../../constants.dart';
+import '../../provider/chat_messages.dart';
+import 'widgets/message_button_input_widget.dart';
+import 'widgets/message_notification_widget.dart';
+import 'widgets/message_widget.dart';
+import '../../widgets/profile_avatar_widget.dart';
 
 class ChatScreen extends StatelessWidget {
   final String idUser;
@@ -32,10 +33,11 @@ class ChatScreen extends StatelessWidget {
         final messages = Provider.of<ChatMessages>(context).getMessages();
 
         return Scaffold(
-          backgroundColor: const Color(0xff0c0921),
+          backgroundColor: Constants.primaryColor,
           appBar: appBar(),
           body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: const EdgeInsets.symmetric(
+                horizontal: Constants.kPadding, vertical: 10),
             child: Column(
               children: [
                 const MessageNotification(),
@@ -106,7 +108,7 @@ class ChatScreen extends StatelessWidget {
     );
   }
 
-  Container dayOfWeek() {
+  Widget dayOfWeek() {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
@@ -116,12 +118,12 @@ class ChatScreen extends StatelessWidget {
       ),
       child: const Text(
         " Today ",
-        style: TextStyle(color: Colors.white, fontSize: 12),
+        style: TextStyle(color: Constants.primaryTextColor, fontSize: 12),
       ),
     );
   }
 
-  Expanded conversation(List<MessageModel> messages) {
+  Widget conversation(List<MessageModel> messages) {
     return Expanded(
         child: ListView.builder(
       physics: const BouncingScrollPhysics(),
@@ -136,14 +138,14 @@ class ChatScreen extends StatelessWidget {
     ));
   }
 
-  TextField messageInput() {
+  Widget messageInput() {
     final outlineInputBorder = OutlineInputBorder(
         borderSide: BorderSide.none, borderRadius: BorderRadius.circular(25));
 
     return TextField(
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
-        fillColor: const Color(0xff1f1c32),
+        fillColor: Constants.secondaryColor,
         filled: true,
         isDense: true,
         prefixIcon: const MessageButtonInput(icon: Icons.emoji_emotions),

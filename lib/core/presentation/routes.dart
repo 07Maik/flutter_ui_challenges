@@ -1,6 +1,6 @@
 import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
 
-import 'package:flutter_ui_challenges/src/pages/chat_app/screens/chat_list_screen.dart'
+import 'package:flutter_ui_challenges/src/pages/chat_app/screens/home/chat_list_screen.dart'
     as chat_app;
 
 import 'package:flutter_ui_challenges/src/pages/food_app/screens/login_screen.dart'
@@ -15,7 +15,7 @@ import 'package:flutter_ui_challenges/src/pages/sushi_app/screens/home_screen.da
 import 'package:flutter_ui_challenges/src/pages/task_todolist/screens/task_screen.dart'
     as task_todolist;
 
-import 'package:flutter_ui_challenges/src/pages/clothes_shopping/screens/home_screen.dart'
+import 'package:flutter_ui_challenges/src/pages/clothes_shopping/screens/home/home_screen.dart'
     as clothes_shopping;
 
 final routes = <RouteModel>[

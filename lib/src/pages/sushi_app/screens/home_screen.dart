@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_challenges/src/pages/sushi_app/models/category_menu_model.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-import '../data.dart';
+import '../constants.dart';
+import '../models/popular_menu_model.dart';
 import '../widgets/custom_bottom_menu_widget.dart';
 import '../widgets/custom_carousel_slider_widget.dart';
 import '../widgets/custom_seach_widget.dart';
@@ -65,9 +67,9 @@ class HomePage extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         image: const DecorationImage(
-            image: NetworkImage(
-                'https://res.cloudinary.com/dg6ag2cyo/image/upload/v1672068542/flutter_ui/pexels-pixabay-220453_ce1kx9.jpg'),
-            fit: BoxFit.cover),
+          image: NetworkImage(Constants.profileImage),
+          fit: BoxFit.cover,
+        ),
       ),
     );
 
@@ -83,6 +85,8 @@ class HomePage extends StatelessWidget {
   }
 
   Widget popularMenu(BuildContext context) {
+    final List<PopularMenuModel> itemsPopularMenu = PopularMenuModel.getItems();
+
     final lblCategory = Padding(
       padding: const EdgeInsets.symmetric(horizontal: 35),
       child: Text('Most popular',
@@ -101,10 +105,14 @@ class HomePage extends StatelessWidget {
   }
 
   Widget categoryMenu() {
+    final List<CategoryMenuModel> itemsCategoryMenu = CategoryMenuModel.getItems();
+
     final lblCategory = Padding(
       padding: const EdgeInsets.symmetric(horizontal: 35),
-      child: Text('Choose \na category',
-          style: GoogleFonts.rubik(fontSize: 18, fontWeight: FontWeight.bold)),
+      child: Text(
+        'Choose \na category',
+        style: GoogleFonts.rubik(fontSize: 18, fontWeight: FontWeight.bold),
+      ),
     );
 
     return Container(
@@ -119,7 +127,8 @@ class HomePage extends StatelessWidget {
             child: ListView.builder(
               itemCount: itemsCategoryMenu.length,
               scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) => _categoryMenucard(index),
+              itemBuilder: (context, index) =>
+                  _categoryMenucard(itemsCategoryMenu[index], index == 0),
             ),
           ),
         ],
@@ -127,17 +136,15 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Container _categoryMenucard(int index) {
-    final model = itemsCategoryMenu[index];
-
+  Container _categoryMenucard(CategoryMenuModel model, bool isfirst) {
     return Container(
       width: 120,
-      margin: EdgeInsets.only(left: index == 0 ? 35 : 0, right: 15),
+      margin: EdgeInsets.only(left: isfirst ? 35 : 0, right: 15),
       decoration: BoxDecoration(
-          color: Color(model.backgroundColorHexadecimal),
-          borderRadius: BorderRadius.circular(10),
-          image:
-              DecorationImage(image: NetworkImage(model.urlImage), scale: 5)),
+        color: Color(model.backgroundColorHexadecimal),
+        borderRadius: BorderRadius.circular(10),
+        image: DecorationImage(image: NetworkImage(model.urlImage), scale: 5),
+      ),
     );
   }
 }

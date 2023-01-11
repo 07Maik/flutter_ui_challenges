@@ -61,9 +61,12 @@ class FoodDishDetail extends StatelessWidget {
         backgroundColor: const Color(0xff27c96d),
         shape: const RoundedRectangleBorder(),
         label: const SizedBox(
-            width: 280,
-            child:
-                Align(alignment: Alignment.center, child: Text('Add to cart'))),
+          width: 280,
+          child: Align(
+            alignment: Alignment.center,
+            child: Text('Add to cart'),
+          ),
+        ),
       ),
     );
   }
@@ -76,30 +79,24 @@ class FoodDishDetail extends StatelessWidget {
         width: double.infinity,
         height: heigth,
         decoration: BoxDecoration(
-            borderRadius: const BorderRadius.only(
-                bottomLeft: Radius.circular(15),
-                bottomRight: Radius.circular(15)),
-            image: DecorationImage(
-                fit: BoxFit.none,
-                image: NetworkImage(dishModel.urlImage, scale: 0.7))),
+          borderRadius: const BorderRadius.only(
+            bottomLeft: Radius.circular(15),
+            bottomRight: Radius.circular(15),
+          ),
+          image: DecorationImage(
+            fit: BoxFit.none,
+            image: NetworkImage(dishModel.urlImage, scale: 0.7),
+          ),
+        ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.end,
           children: const [
-            Icon(
-              Icons.arrow_back,
-              color: Colors.white,
-            ),
+            Icon(Icons.arrow_back, color: Colors.white),
             Spacer(),
-            Icon(
-              Icons.share_outlined,
-              color: Colors.white,
-            ),
+            Icon(Icons.share_outlined, color: Colors.white),
             SizedBox(width: 20),
-            Icon(
-              Icons.bookmark_outline,
-              color: Colors.white,
-            ),
+            Icon(Icons.bookmark_outline, color: Colors.white),
           ],
         ),
       ),
@@ -125,11 +122,13 @@ class FoodDishDetail extends StatelessWidget {
           children: [
             Rating(rate: dishModel.rating),
             const SizedBox(width: 5),
-            Text(dishModel.price,
-                style: const TextStyle(
-                  fontSize: 10,
-                  color: Colors.white70,
-                ))
+            Text(
+              dishModel.price,
+              style: const TextStyle(
+                fontSize: 10,
+                color: Colors.white70,
+              ),
+            )
           ],
         ),
       ],

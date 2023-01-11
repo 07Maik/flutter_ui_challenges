@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../constants.dart';
+
 class Sizes extends StatelessWidget {
   const Sizes({super.key});
 
@@ -35,13 +37,15 @@ class Sizes extends StatelessWidget {
       height: 40,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: isSelected ? Colors.black : null,
+        color: isSelected ? Constants.secondColor : Constants.primaryColor,
         shape: BoxShape.circle,
         border: Border.all(color: Colors.grey, width: 0.5),
       ),
       child: Text(
         size,
-        style: TextStyle(color: isSelected ? Colors.white : Colors.grey),
+        style: TextStyle(
+          color: isSelected ? Constants.primaryColor : Colors.grey,
+        ),
       ),
     );
   }

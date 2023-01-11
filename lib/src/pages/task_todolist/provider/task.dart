@@ -1,12 +1,11 @@
 import 'package:flutter/foundation.dart';
 
-import '../data.dart';
 import '../models/task_model.dart';
 
 class Task extends ChangeNotifier {
   final List<TaskModel> _task;
 
-  Task() : _task = task;
+  Task() : _task = TaskModel.getList();
 
   List<TaskModel> getTasks() => _task;
 
