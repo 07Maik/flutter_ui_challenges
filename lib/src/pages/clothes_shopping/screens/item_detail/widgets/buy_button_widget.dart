@@ -17,12 +17,12 @@ class BuyButton extends StatelessWidget {
         foregroundColor: Constants.primaryColor,
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
         child: Row(
           children: const [
             Icon(Icons.shopping_bag_outlined, size: 20),
             SizedBox(width: 16),
-            Text('Add to cart', style: TextStyle(fontSize: 20)),
+            Text('Add to cart', style: TextStyle(fontSize: 16)),
           ],
         ),
       ),

@@ -6,6 +6,7 @@ class ItemShoppingModel {
   final String price;
   final String generalDescription;
   final int colorBackground;
+  // final bool isReactable;
 
   ItemShoppingModel({
     required this.id,
@@ -28,7 +29,7 @@ class ItemShoppingModel {
         price: "\$345.00",
         generalDescription: "Irregular Rib Skirt",
         description:
-            "1Aliqua deserunt ut dolore fugiat consectetur ut. Ullamco commodo in esse consequat. Ex adipisicing qui commodo quis aliquip cupidatat anim incididunt commodo Lorem excepteur deserunt cupidatat. Laborum occaecat commodo fugiat fugiat deserunt id cupidatat aliqua minim ipsum ex laborum eiusmod adipisicing. Officia aute ex consectetur ea non magna sit. Adipisicing proident cillum commodo dolor labore culpa non.",
+            "1Aliqua deserunt ut dolore fugiat consectetur ut. Ullamco commodo in esse consequat. Ex adipisicing qui commodo quis aliquip cupidatat anim incididunt commodo Lorem excepteur deserunt cupidatat.",
       ),
       ItemShoppingModel(
         id: "2",
@@ -39,7 +40,7 @@ class ItemShoppingModel {
         price: "\$50.00",
         generalDescription: "Bubble Elastic T-shirt",
         description:
-            "2Aliqua deserunt ut dolore fugiat consectetur ut. Ullamco commodo in esse consequat. Ex adipisicing qui commodo quis aliquip cupidatat anim incididunt commodo Lorem excepteur deserunt cupidatat. Laborum occaecat commodo fugiat fugiat deserunt id cupidatat aliqua minim ipsum ex laborum eiusmod adipisicing. Officia aute ex consectetur ea non magna sit. Adipisicing proident cillum commodo dolor labore culpa non.",
+            "2Aliqua deserunt ut dolore fugiat consectetur ut. Ullamco commodo in esse consequat. Ex adipisicing qui commodo quis aliquip cupidatat anim incididunt commodo Lorem excepteur deserunt cupidatat.",
       ),
       ItemShoppingModel(
         id: "3",
@@ -50,7 +51,7 @@ class ItemShoppingModel {
         price: "\$345.00",
         generalDescription: "Irregular Rib Skirt",
         description:
-            "3Aliqua deserunt ut dolore fugiat consectetur ut. Ullamco commodo in esse consequat. Ex adipisicing qui commodo quis aliquip cupidatat anim incididunt commodo Lorem excepteur deserunt cupidatat. Laborum occaecat commodo fugiat fugiat deserunt id cupidatat aliqua minim ipsum ex laborum eiusmod adipisicing. Officia aute ex consectetur ea non magna sit. Adipisicing proident cillum commodo dolor labore culpa non.",
+            "3Aliqua deserunt ut dolore fugiat consectetur ut. Ullamco commodo in esse consequat. Ex adipisicing qui commodo quis aliquip cupidatat anim incididunt commodo Lorem excepteur deserunt cupidatat.",
       ),
       ItemShoppingModel(
         id: "4",
@@ -61,7 +62,7 @@ class ItemShoppingModel {
         price: "\$345.00",
         generalDescription: "Irregular Rib Skirt",
         description:
-            "4Aliqua deserunt ut dolore fugiat consectetur ut. Ullamco commodo in esse consequat. Ex adipisicing qui commodo quis aliquip cupidatat anim incididunt commodo Lorem excepteur deserunt cupidatat. Laborum occaecat commodo fugiat fugiat deserunt id cupidatat aliqua minim ipsum ex laborum eiusmod adipisicing. Officia aute ex consectetur ea non magna sit. Adipisicing proident cillum commodo dolor labore culpa non.",
+            "4Aliqua deserunt ut dolore fugiat consectetur ut. Ullamco commodo in esse consequat. Ex adipisicing qui commodo quis aliquip cupidatat anim incididunt commodo Lorem excepteur deserunt cupidatat.",
       ),
       ItemShoppingModel(
         id: "5",
@@ -72,7 +73,7 @@ class ItemShoppingModel {
         price: "\$345.00",
         generalDescription: "Irregular Rib Skirt",
         description:
-            "5Aliqua deserunt ut dolore fugiat consectetur ut. Ullamco commodo in esse consequat. Ex adipisicing qui commodo quis aliquip cupidatat anim incididunt commodo Lorem excepteur deserunt cupidatat. Laborum occaecat commodo fugiat fugiat deserunt id cupidatat aliqua minim ipsum ex laborum eiusmod adipisicing. Officia aute ex consectetur ea non magna sit. Adipisicing proident cillum commodo dolor labore culpa non.",
+            "5Aliqua deserunt ut dolore fugiat consectetur ut. Ullamco commodo in esse consequat. Ex adipisicing qui commodo quis aliquip cupidatat anim incididunt commodo Lorem excepteur deserunt cupidatat.",
       ),
       ItemShoppingModel(
         id: "6",
@@ -83,7 +84,7 @@ class ItemShoppingModel {
         price: "\$345.00",
         generalDescription: "Irregular Rib Skirt",
         description:
-            "6Aliqua deserunt ut dolore fugiat consectetur ut. Ullamco commodo in esse consequat. Ex adipisicing qui commodo quis aliquip cupidatat anim incididunt commodo Lorem excepteur deserunt cupidatat. Laborum occaecat commodo fugiat fugiat deserunt id cupidatat aliqua minim ipsum ex laborum eiusmod adipisicing. Officia aute ex consectetur ea non magna sit. Adipisicing proident cillum commodo dolor labore culpa non.",
+            "6Aliqua deserunt ut dolore fugiat consectetur ut. Ullamco commodo in esse consequat. Ex adipisicing qui commodo quis aliquip cupidatat anim incididunt commodo Lorem excepteur deserunt cupidatat.",
       ),
     ];
   }

@@ -20,8 +20,12 @@ class ListItems extends StatelessWidget {
             items.length,
             (index) => Container(
               margin: EdgeInsets.only(top: index % 2 == 1 ? 40 : 0),
-              height: 240,
-              width: width < 400 ? 160 : 190,
+              height: 250,
+              width: width < 400
+                  ? 160
+                  : width < 420
+                      ? 170
+                      : 190,
               child: CardItem(item: items[index]),
             ),
           ).toList()),

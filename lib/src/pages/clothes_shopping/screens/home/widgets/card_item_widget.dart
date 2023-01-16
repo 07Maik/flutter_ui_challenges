@@ -5,7 +5,7 @@ import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
 import 'package:flutter_ui_challenges/core/presentation/widgets/custom_route_transitions.dart';
 
 import '../../../constants.dart';
-import '../../item/detail_screen.dart';
+import '../../item_detail/detail_screen.dart';
 import '../../../model/item_shopping_model.dart';
 
 class CardItem extends StatelessWidget {
@@ -27,7 +27,7 @@ class CardItem extends StatelessWidget {
           Stack(
             children: [
               Container(
-                height: 160,
+                height: 170,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: Color(item.colorBackground),

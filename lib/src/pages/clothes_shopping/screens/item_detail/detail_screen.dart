@@ -15,6 +15,7 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.red,
       body: Stack(
         alignment: Alignment.bottomCenter,
         children: [
@@ -34,7 +35,7 @@ class DetailScreen extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            height: 450,
+            height: 500,
             decoration: BoxDecoration(
               color: Color(item.colorBackground),
               borderRadius: const BorderRadius.vertical(
@@ -54,7 +55,7 @@ class DetailScreen extends StatelessWidget {
               icon: const CircleAvatar(
                 backgroundColor: Constants.secondColor,
                 foregroundColor: Constants.primaryColor,
-                child: Icon(Icons.arrow_back, size: 12),
+                child: Icon(Icons.arrow_back, size: 16),
               ),
             ),
           ),
@@ -66,7 +67,7 @@ class DetailScreen extends StatelessWidget {
               icon: const CircleAvatar(
                 backgroundColor: Constants.primaryColor,
                 foregroundColor: Constants.secondColor,
-                child: Icon(Icons.shopping_bag_outlined, size: 12),
+                child: Icon(Icons.shopping_bag_outlined, size: 16),
               ),
             ),
           ),
@@ -78,7 +79,7 @@ class DetailScreen extends StatelessWidget {
                 icon: const CircleAvatar(
                   backgroundColor: Constants.primaryColor,
                   foregroundColor: Constants.secondColor,
-                  child: Icon(Icons.thumb_up_outlined, size: 12),
+                  child: Icon(Icons.thumb_up_outlined, size: 16),
                 )),
           ),
         ],
@@ -88,7 +89,7 @@ class DetailScreen extends StatelessWidget {
 
   Container clothesDetail() {
     return Container(
-      height: 400,
+      height: 350,
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
@@ -188,7 +189,7 @@ class DetailScreen extends StatelessWidget {
                 ),
               ),
               Text(
-                '\$${item.price}',
+                item.price,
                 style: GoogleFonts.kanit(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,

@@ -38,6 +38,7 @@ class BottomMenuBar extends StatelessWidget {
   }
 
   Widget menuOption(IconData icon, [bool isSelected = false]) {
+    const double sizeIcon = 20;
     return isSelected
         ? Container(
             width: 100,
@@ -50,10 +51,10 @@ class BottomMenuBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 CircleAvatar(
-                  radius: 14,
+                  radius: 16,
                   backgroundColor: Constants.primaryColor,
                   foregroundColor: Constants.secondColor,
-                  child: Icon(icon),
+                  child: Icon(icon, size: sizeIcon),
                 ),
                 const SizedBox(width: 8),
                 const Text(
@@ -65,7 +66,7 @@ class BottomMenuBar extends StatelessWidget {
           )
         : IconButton(
             onPressed: (() {}),
-            icon: Icon(icon, color: Constants.secondColor),
+            icon: Icon(icon, color: Constants.secondColor, size: sizeIcon),
           );
   }
 }

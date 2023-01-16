@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: const Color(0xfffefefe),
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Column(
           children: [
