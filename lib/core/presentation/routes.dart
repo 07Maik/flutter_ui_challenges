@@ -18,6 +18,9 @@ import 'package:flutter_ui_challenges/src/pages/task_todolist/screens/task_scree
 import 'package:flutter_ui_challenges/src/pages/clothes_shopping/screens/home/home_screen.dart'
     as clothes_shopping;
 
+import 'package:flutter_ui_challenges/src/clone_apps/basic_calculator_IOS/screens/home/calculator_screen.dart'
+    as calculator_IOS;
+
 final routes = <RouteModel>[
   RouteModel(
     title: 'Login Freebie',
@@ -83,5 +86,14 @@ final routes = <RouteModel>[
       "path": 'shots/19944979-Cloths-Shopping-App-Design/'
     },
     child: const clothes_shopping.HomeScreen(),
+  ),
+
+  // Clone Apps
+  RouteModel(
+    title: 'Basic Calculator IOS',
+    category: ChallengeCategory.appClone,
+    description:
+        'There are three screens: one to splash screen, one to make login and one to see the food menu options.',
+    child: calculator_IOS.CalculatorScreen(),
   ),
 ];
