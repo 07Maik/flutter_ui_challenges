@@ -8,6 +8,8 @@ import 'package:flutter_ui_challenges/core/presentation/pages/home_page.dart';
 
 import 'package:window_size/window_size.dart';
 
+// import 'src/clone_apps/clock_MIUI/screens/home/screens/home_screen.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
