@@ -37,7 +37,7 @@ class Sizes extends StatelessWidget {
       height: 40,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: isSelected ? Constants.secondColor : Constants.primaryColor,
+        color: isSelected ? Constants.secondaryColor : Constants.primaryColor,
         shape: BoxShape.circle,
         border: Border.all(color: Colors.grey, width: 0.5),
       ),

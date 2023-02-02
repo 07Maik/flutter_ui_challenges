@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_challenges/src/pages/sushi_app/models/category_menu_model.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 
-import '../constants.dart';
-import '../models/popular_menu_model.dart';
-import '../widgets/custom_bottom_menu_widget.dart';
-import '../widgets/custom_carousel_slider_widget.dart';
-import '../widgets/custom_seach_widget.dart';
+import '../../constants.dart';
+import '../../models/category_menu_model.dart';
+import '../../models/popular_menu_model.dart';
+import 'widgets/custom_bottom_menu_widget.dart';
+import 'widgets/custom_carousel_slider_widget.dart';
+import 'widgets/custom_seach_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -105,7 +104,8 @@ class HomePage extends StatelessWidget {
   }
 
   Widget categoryMenu() {
-    final List<CategoryMenuModel> itemsCategoryMenu = CategoryMenuModel.getItems();
+    final List<CategoryMenuModel> itemsCategoryMenu =
+        CategoryMenuModel.getItems();
 
     final lblCategory = Padding(
       padding: const EdgeInsets.symmetric(horizontal: 35),

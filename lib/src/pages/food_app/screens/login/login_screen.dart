@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:flutter_ui_challenges/src/pages/food_app/widgets/background_icons_widget.dart';
+import '../../constants.dart';
+import '../splash/splash_screen.dart';
 
-import '../widgets/custom_input_widget.dart';
-import '../widgets/custom_text_button_widget.dart';
+import '../../widgets/background_icons_widget.dart';
+import 'widgets/custom_input_widget.dart';
+import 'widgets/custom_text_button_widget.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -26,7 +28,7 @@ class LoginScreen extends StatelessWidget {
       width: 500,
       minIconsPerColumn: 3,
       numberIconsPerColumn: 4,
-      iconColor: Colors.grey.withOpacity(0.12),
+      iconColor: Constants.terciaryColor.withOpacity(0.12),
     );
   }
 
@@ -40,10 +42,16 @@ class LoginScreen extends StatelessWidget {
       ),
     );
 
-    const emailInput = CustomInput(labelText: 'Email', hintText: 'Email');
+    const emailInput = CustomInput(
+      labelText: 'Email',
+      hintText: 'Email',
+    );
 
     const passworInput = CustomInput(
-        labelText: 'Passowrd', hintText: 'Passowrd', isObsText: true);
+      labelText: 'Passowrd',
+      hintText: 'Passowrd',
+      isObsText: true,
+    );
 
     const spaceBetween = SizedBox(height: 40.0);
 
@@ -60,9 +68,12 @@ class LoginScreen extends StatelessWidget {
           spaceBetween,
           passworInput,
           spaceBetween,
-          const CustomTextButton(),
+          const CustomTextButton(screen: SplashScreen()),
           spaceBetween,
-          const Text('Forgot password', style: TextStyle(color: Colors.black54))
+          const Text(
+            'Forgot password',
+            style: TextStyle(color: Colors.black54),
+          )
         ],
       ),
     );

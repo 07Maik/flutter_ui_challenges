@@ -6,7 +6,6 @@ class ItemShoppingModel {
   final String price;
   final String generalDescription;
   final int colorBackground;
-  // final bool isReactable;
 
   ItemShoppingModel({
     required this.id,

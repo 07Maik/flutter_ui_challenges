@@ -5,16 +5,15 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
 import 'package:flutter_ui_challenges/core/presentation/widgets/custom_route_transitions.dart';
 
-import 'package:flutter_ui_challenges/src/pages/login_freebie/screens/sign_up_screen.dart';
+import 'package:flutter_ui_challenges/src/pages/login_freebie/screens/sign_up/sign_up_screen.dart';
 import 'package:flutter_ui_challenges/src/pages/login_freebie/widgets/custom_input_widget.dart';
 
-import '../widgets/custom_button_widget.dart';
-import '../widgets/custom_radio_widget.dart';
+import '../../constants.dart';
+import '../../widgets/custom_button_widget.dart';
+import 'widgets/custom_radio_widget.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
-
-  static const Color primaryColor = Color(0xff445ee9);
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +66,8 @@ class LoginScreen extends StatelessWidget {
           const SizedBox(height: 20),
           _frmPassword(),
           const SizedBox(height: 30),
-          const CustomButton(primaryColor: primaryColor, text: 'LOGIN'),
+          const CustomButton(
+              backGroundColor: Constants.secondaryColor, text: 'LOGIN'),
           _frmNewUser(context)
         ],
       ),
@@ -77,7 +77,7 @@ class LoginScreen extends StatelessWidget {
   Row _frmPassword() {
     return Row(
       children: const [
-        CustomRadio(primaryColor: primaryColor),
+        CustomRadio(primaryColor: Constants.secondaryColor),
         Text(' Remember me',
             style: TextStyle(
               fontSize: 13,
@@ -85,7 +85,8 @@ class LoginScreen extends StatelessWidget {
               color: Colors.grey,
             )),
         Spacer(),
-        Text('Forgot password?', style: TextStyle(color: primaryColor)),
+        Text('Forgot password?',
+            style: TextStyle(color: Constants.secondaryColor)),
       ],
     );
   }
@@ -111,7 +112,7 @@ class LoginScreen extends StatelessWidget {
             child: const Text(
               'SignUp',
               style: TextStyle(
-                color: primaryColor,
+                color: Constants.secondaryColor,
                 fontSize: 12,
               ),
             ))

@@ -1,10 +1,6 @@
 List<int> median(int number) {
   var middle = number ~/ 2;
-  if (number % 2 == 1) {
-    return [middle];
-  } else {
-    return [middle - 1, middle];
-  }
+  return number % 2 == 1 ? [middle] : [middle - 1, middle];
 }
 
 List<double> calculateAngle(int index, int menuLength) {

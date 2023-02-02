@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
 import 'package:flutter_ui_challenges/core/presentation/widgets/custom_route_transitions.dart';
 
-import '../screens/login_screen.dart';
+import '../screens/login/login_screen.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
     Key? key,
-    required this.primaryColor,
+    required this.backGroundColor,
     required this.text,
   }) : super(key: key);
 
-  final Color primaryColor;
+  final Color backGroundColor;
   final String text;
 
   @override
@@ -21,7 +21,7 @@ class CustomButton extends StatelessWidget {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             foregroundColor: Colors.white,
-            backgroundColor: primaryColor,
+            backgroundColor: backGroundColor,
             elevation: 25,
             shadowColor: Colors.black54),
         onPressed: (() {

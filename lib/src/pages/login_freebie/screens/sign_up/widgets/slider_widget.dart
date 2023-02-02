@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
-import '../providers/slide_show.dart';
+import '../../../providers/slide_show.dart';
 import 'dot_widget.dart';
 
 class SliderSignUp extends StatefulWidget {

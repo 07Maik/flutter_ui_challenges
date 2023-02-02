@@ -6,6 +6,7 @@ class SplashShapeClipperMain extends CustomClipper<Path> {
     Path path = Path();
 
     final heigth = size.height - 70;
+    //corregir tamaños dinamicos
 
     path.lineTo(0, heigth);
     path.quadraticBezierTo(35, heigth + 15, 80, heigth);

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
-import '../../../models/menu_model.dart';
-import '../../../providers/stopwatch_provider.dart';
-import '../../stopwatch/stopwatch_screen.dart';
-import '../../stopwatch/widgets/stopwatch_button_widget.dart';
+import '../../constants.dart';
+import '../../models/menu_model.dart';
+import '../../providers/stopwatch_provider.dart';
+import '../stopwatch/stopwatch_screen.dart';
+import '../stopwatch/widgets/stopwatch_button_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -43,6 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ])
       ],
       builder: (context, child) => Scaffold(
+        backgroundColor: const Color(Constants.primaryColor),
         appBar: AppBar(
           elevation: 0,
           centerTitle: true,
@@ -74,7 +76,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
-        backgroundColor: Colors.white,
       ),
     );
   }
@@ -107,10 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               icon: Icon(
                 icon,
-                color: Colors.blue,
-                shadows: _currentIndexScreen == 0 && index == 0
-                    ? [const Shadow(color: Colors.blue, blurRadius: 5)]
-                    : null,
+                color: const Color(Constants.secundaryColor),
               ),
             );
           }),

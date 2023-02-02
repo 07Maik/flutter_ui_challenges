@@ -3,13 +3,13 @@ import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
 import 'package:flutter_ui_challenges/src/pages/chat_app/screens/home/chat_list_screen.dart'
     as chat_app;
 
-import 'package:flutter_ui_challenges/src/pages/food_app/screens/login_screen.dart'
+import 'package:flutter_ui_challenges/src/pages/food_app/screens/login/login_screen.dart'
     as food_app;
 
-import 'package:flutter_ui_challenges/src/pages/login_freebie/screens/sign_up_screen.dart'
+import 'package:flutter_ui_challenges/src/pages/login_freebie/screens/sign_up/sign_up_screen.dart'
     as login_freebie;
 
-import 'package:flutter_ui_challenges/src/pages/sushi_app/screens/home_screen.dart'
+import 'package:flutter_ui_challenges/src/pages/sushi_app/screens/home/home_screen.dart'
     as sushi_app;
 
 import 'package:flutter_ui_challenges/src/pages/task_todolist/screens/task_screen.dart'
@@ -21,7 +21,7 @@ import 'package:flutter_ui_challenges/src/pages/clothes_shopping/screens/home/ho
 import 'package:flutter_ui_challenges/src/clone_apps/basic_calculator_ios/screens/home/calculator_screen.dart'
     as calculator_ios;
 
-import 'package:flutter_ui_challenges/src/clone_apps/clock_MIUI/screens/home/screens/home_screen.dart'
+import 'package:flutter_ui_challenges/src/clone_apps/clock_MIUI/screens/home/home_screen.dart'
     as clock_miui;
 
 final routes = <RouteModel>[

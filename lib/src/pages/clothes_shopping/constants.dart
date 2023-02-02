@@ -8,5 +8,5 @@ class Constants {
 
   static const Color primaryColor = Color(0xffffffff);
 
-  static const Color secondColor = Color(0xff000000);
+  static const Color secondaryColor = Color(0xff000000);
 }

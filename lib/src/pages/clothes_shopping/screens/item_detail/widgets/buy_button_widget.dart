@@ -13,7 +13,7 @@ class BuyButton extends StatelessWidget {
       onPressed: (() {}),
       style: OutlinedButton.styleFrom(
         shape: const StadiumBorder(),
-        backgroundColor: Constants.secondColor,
+        backgroundColor: Constants.secondaryColor,
         foregroundColor: Constants.primaryColor,
       ),
       child: Padding(

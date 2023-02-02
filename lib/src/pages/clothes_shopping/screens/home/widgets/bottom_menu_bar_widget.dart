@@ -44,7 +44,7 @@ class BottomMenuBar extends StatelessWidget {
             width: 100,
             padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(
-              color: Constants.secondColor,
+              color: Constants.secondaryColor,
               borderRadius: BorderRadius.circular(25),
             ),
             child: Row(
@@ -53,7 +53,7 @@ class BottomMenuBar extends StatelessWidget {
                 CircleAvatar(
                   radius: 16,
                   backgroundColor: Constants.primaryColor,
-                  foregroundColor: Constants.secondColor,
+                  foregroundColor: Constants.secondaryColor,
                   child: Icon(icon, size: sizeIcon),
                 ),
                 const SizedBox(width: 8),
@@ -66,7 +66,7 @@ class BottomMenuBar extends StatelessWidget {
           )
         : IconButton(
             onPressed: (() {}),
-            icon: Icon(icon, color: Constants.secondColor, size: sizeIcon),
+            icon: Icon(icon, color: Constants.secondaryColor, size: sizeIcon),
           );
   }
 }

@@ -22,5 +22,5 @@ String millisecondsDuration(Duration duration) {
 }
 
 String getDuration(Duration duration) {
-  return "${minutesDuration(duration)}:${secondsDuration(duration)}:${millisecondsDuration(duration)}";
+  return "${minutesDuration(duration)}:${secondsDuration(duration)}.${millisecondsDuration(duration)}";
 }

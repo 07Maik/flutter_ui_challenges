@@ -16,6 +16,6 @@ class LapModel {
     final seconds = secondsDuration(totalDuration);
     final milliseconds = millisecondsDuration(totalDuration);
 
-    return "$minutes:$seconds:$milliseconds";
+    return "$minutes:$seconds.$milliseconds";
   }
 }

@@ -31,8 +31,9 @@ class CategoryFilter extends StatelessWidget {
               right: index + 1 == filterMenu.length ? 28 : 0,
             ),
             decoration: BoxDecoration(
-              color:
-                  index == 0 ? Constants.secondColor : Constants.primaryColor,
+              color: index == 0
+                  ? Constants.secondaryColor
+                  : Constants.primaryColor,
               borderRadius: BorderRadius.circular(25),
               border: Border.all(color: Colors.black12, width: 1.5),
             ),
@@ -40,8 +41,9 @@ class CategoryFilter extends StatelessWidget {
               filterMenu[index],
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color:
-                    index == 0 ? Constants.primaryColor : Constants.secondColor,
+                color: index == 0
+                    ? Constants.primaryColor
+                    : Constants.secondaryColor,
               ),
             ),
           );

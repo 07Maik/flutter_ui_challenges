@@ -3,21 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../providers/slide_show.dart';
-import '../widgets/custom_button_widget.dart';
-import '../widgets/slider_widget.dart';
+import '../../constants.dart';
+import '../../providers/slide_show.dart';
+import '../../widgets/custom_button_widget.dart';
+import 'widgets/slider_widget.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
-
-  static const Color primaryColor = Color(0xff445ee9);
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => SlideShow(),
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Constants.primaryColor,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -45,7 +44,7 @@ class SignUpScreen extends StatelessWidget {
           style: TextStyle(
               letterSpacing: 1,
               fontSize: 32,
-              color: primaryColor,
+              color: Constants.secondaryColor,
               fontWeight: FontWeight.w500)),
     );
   }
@@ -83,7 +82,7 @@ class SignUpScreen extends StatelessWidget {
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 30),
             child: const CustomButton(
-              primaryColor: primaryColor,
+              backGroundColor: Constants.secondaryColor,
               text: 'SIGNUP',
             ),
           ),

@@ -12,6 +12,7 @@ class Constants {
   static const Color secondaryTextColor = Color.fromARGB(179, 255, 255, 255);
 
   static const Color highLightColor = Color(0xffff7700);
+
   // chat
 
   static const Color backgroundMessageColor1 = Color(0xff1f1c32);

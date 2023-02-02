@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
-import '../providers/slide_show.dart';
+import '../../../providers/slide_show.dart';
 
 class Dot extends StatelessWidget {
   final int index;
@@ -21,7 +21,8 @@ class Dot extends StatelessWidget {
       width: 6,
       height: 6,
       decoration: BoxDecoration(
-        color: provider.currentPage == index ? Colors.grey[400] : Colors.grey[300],
+        color:
+            provider.currentPage == index ? Colors.grey[400] : Colors.grey[300],
         shape: BoxShape.circle,
       ),
     );

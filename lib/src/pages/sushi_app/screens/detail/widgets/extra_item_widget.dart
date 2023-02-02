@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_ui_challenges/src/pages/sushi_app/widgets/rating_widget.dart';
+import 'package:flutter_ui_challenges/src/pages/sushi_app/screens/detail/widgets/rating_widget.dart';
 
 class ExtraItem extends StatelessWidget {
   const ExtraItem({

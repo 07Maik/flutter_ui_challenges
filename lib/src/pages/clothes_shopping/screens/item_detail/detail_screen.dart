@@ -53,7 +53,7 @@ class DetailScreen extends StatelessWidget {
             child: IconButton(
               onPressed: () {},
               icon: const CircleAvatar(
-                backgroundColor: Constants.secondColor,
+                backgroundColor: Constants.secondaryColor,
                 foregroundColor: Constants.primaryColor,
                 child: Icon(Icons.arrow_back, size: 16),
               ),
@@ -66,7 +66,7 @@ class DetailScreen extends StatelessWidget {
               onPressed: () {},
               icon: const CircleAvatar(
                 backgroundColor: Constants.primaryColor,
-                foregroundColor: Constants.secondColor,
+                foregroundColor: Constants.secondaryColor,
                 child: Icon(Icons.shopping_bag_outlined, size: 16),
               ),
             ),
@@ -78,7 +78,7 @@ class DetailScreen extends StatelessWidget {
                 onPressed: () {},
                 icon: const CircleAvatar(
                   backgroundColor: Constants.primaryColor,
-                  foregroundColor: Constants.secondColor,
+                  foregroundColor: Constants.secondaryColor,
                   child: Icon(Icons.thumb_up_outlined, size: 16),
                 )),
           ),

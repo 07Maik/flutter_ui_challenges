@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../models/popular_menu_model.dart';
-import '../widgets/extra_item_widget.dart';
-import '../widgets/rating_widget.dart';
+import '../../models/popular_menu_model.dart';
+import 'widgets/extra_item_widget.dart';
+import 'widgets/rating_widget.dart';
 
 class FoodDishDetail extends StatelessWidget {
   final PopularMenuModel dishModel;

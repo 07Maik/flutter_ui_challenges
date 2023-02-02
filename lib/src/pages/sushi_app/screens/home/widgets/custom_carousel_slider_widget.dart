@@ -4,10 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
 import 'package:flutter_ui_challenges/core/presentation/widgets/custom_route_transitions.dart';
-import 'package:flutter_ui_challenges/src/pages/sushi_app/screens/food_dish_detail_screen.dart';
+import 'package:flutter_ui_challenges/src/pages/sushi_app/screens/detail/food_dish_detail_screen.dart';
 
-import '../models/popular_menu_model.dart';
-import 'rating_widget.dart';
+import '../../../models/popular_menu_model.dart';
+import '../../detail/widgets/rating_widget.dart';
 
 class CustomCarouselSlider extends StatefulWidget {
   final List<PopularMenuModel> items;

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
+import '../../../constants.dart';
+
 import '../../../providers/stopwatch_provider.dart';
 
 class StopwatchButton extends StatelessWidget {
@@ -62,13 +64,12 @@ class StopwatchButton extends StatelessWidget {
 
   FloatingActionButton _btnAction(Function onPressed, IconData icon) {
     return FloatingActionButton(
-      backgroundColor: Colors.white,
-      foregroundColor: Colors.grey,
+      backgroundColor: const Color(Constants.primaryColor),
+      foregroundColor: const Color(Constants.secundaryColor),
       elevation: 10,
       onPressed: () => onPressed(),
       child: Icon(
         icon,
-        color: Colors.blue,
       ),
     );
   }

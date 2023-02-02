@@ -42,7 +42,7 @@ class CardItem extends StatelessWidget {
                 top: 16,
                 child: CircleAvatar(
                   radius: 10,
-                  backgroundColor: Constants.secondColor,
+                  backgroundColor: Constants.secondaryColor,
                   foregroundColor: Constants.primaryColor,
                   child: Icon(Icons.thumb_up_alt_outlined, size: 10),
                 ),

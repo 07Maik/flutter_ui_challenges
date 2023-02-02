@@ -13,16 +13,15 @@ class BackgroundIcons extends StatelessWidget {
   final int minSizeIcon;
   final int maxSizeIcon;
 
-  const BackgroundIcons({
-    super.key,
-    required this.width,
-    required this.height,
-    required this.numberIconsPerColumn,
-    required this.minIconsPerColumn,
-    required this.iconColor,
-    this.minSizeIcon = 25,
-    this.maxSizeIcon = 50
-  });
+  const BackgroundIcons(
+      {super.key,
+      required this.width,
+      required this.height,
+      required this.numberIconsPerColumn,
+      required this.minIconsPerColumn,
+      required this.iconColor,
+      this.minSizeIcon = 25,
+      this.maxSizeIcon = 50});
 
   static const List<IconData> _icons = [
     Icons.fastfood_sharp,
@@ -40,9 +39,7 @@ class BackgroundIcons extends StatelessWidget {
   ];
 
   @override
-  Widget build(BuildContext context) {
-    return Stack(children: icons());
-  }
+  Widget build(BuildContext context) => Stack(children: icons());
 
   List<Positioned> icons() {
     double? top;
