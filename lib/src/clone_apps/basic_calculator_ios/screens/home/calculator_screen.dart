@@ -16,17 +16,21 @@ class CalculatorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: const EdgeInsets.only(right: 46),
         color: Colors.black,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.end,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: MathResult(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: MathResult(),
+                ),
+                digits(),
+              ],
             ),
-            digits(),
           ],
         ),
       ),

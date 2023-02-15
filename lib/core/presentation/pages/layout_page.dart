@@ -13,7 +13,7 @@ class LayoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xfffafafa),
+      backgroundColor: Color(0xFFE4E4E4),
       body: SafeArea(
         child: Stack(
           alignment: Alignment.center,

@@ -1,5 +1,11 @@
 import 'package:flutter_ui_challenges/core/data/models/route_model.dart';
 
+import 'package:flutter_ui_challenges/src/pages/basic_ecommerce/screens/checkout/checkout_screen.dart'
+    as basic_ecommerce;
+
+import 'package:flutter_ui_challenges/src/pages/basic_ecommerce2/screens/confirm_order_screen.dart/confirm_order_screen.dart'
+    as basic_ecommerce2;
+
 import 'package:flutter_ui_challenges/src/pages/chat_app/screens/home/chat_list_screen.dart'
     as chat_app;
 
@@ -24,10 +30,63 @@ import 'package:flutter_ui_challenges/src/clone_apps/basic_calculator_ios/screen
 import 'package:flutter_ui_challenges/src/clone_apps/clock_MIUI/screens/home/home_screen.dart'
     as clock_miui;
 
+import 'package:flutter_ui_challenges/src/pages/basic_login/screens/login/login_screen.dart'
+    as login_basic;
+
+import 'package:flutter_ui_challenges/src/pages/basic_login2/screens/login/login_screen.dart'
+    as login_basic2;
+
 final routes = <RouteModel>[
   RouteModel(
+    title: 'Basic Login',
+    description: 'A view with simple design of login screen',
+    designSource: {
+      "scheme": "https",
+      "host": 'github.com',
+      "path":
+          'lohanidamodar/flutter_ui_challenges/blob/master/screenshots/login6.png/'
+    },
+    child: const login_basic.LoginScreen(),
+  ),
+  RouteModel(
+    title: 'Basic Login 2',
+    description: 'A view with waves on the login screen',
+    designSource: {
+      "scheme": "https",
+      "host": 'github.com',
+      "path":
+          'lohanidamodar/flutter_ui_challenges/blob/master/screenshots/login7.png/'
+    },
+    child: const login_basic2.LoginScreen(),
+  ),
+  RouteModel(
+    title: 'Basic ecommerce',
+    description:
+        'A view with a simple and beautiful design to choose the payments options.',
+    designSource: {
+      "scheme": "https",
+      "host": 'github.com',
+      "path":
+          'lohanidamodar/flutter_ui_challenges/blob/master/screenshots/checkout1.png/'
+    },
+    child: const basic_ecommerce.CheckoutScreen(),
+  ),
+  RouteModel(
+    title: 'Basic ecommerce 2',
+    description: 'A view with a simple and beautiful design to confirm order.',
+    designSource: {
+      "scheme": "https",
+      "host": 'github.com',
+      "path":
+          'lohanidamodar/flutter_ui_challenges/blob/master/screenshots/confirm_order1.png/'
+    },
+    child: const basic_ecommerce2.ConfirmOrderScreen(),
+  ),
+
+  RouteModel(
     title: 'Login Freebie',
-    description: '',
+    description:
+        'A view with a slider on signup screen and other simple view for login.',
     designSource: {
       "scheme": "https",
       "host": 'www.uplabs.com',
@@ -38,7 +97,7 @@ final routes = <RouteModel>[
   RouteModel(
     title: 'Food App',
     description:
-        'There are three screens: one to splash screen, one to make login and one to see the food menu options.',
+        'Beautiful views for fast food app with strange shapes and creative design.',
     designSource: {
       "scheme": "https",
       "host": 'www.uplabs.com',
@@ -49,7 +108,7 @@ final routes = <RouteModel>[
   RouteModel(
     title: 'Sushi App',
     description:
-        'There are three screens: one to splash screen, one to make login and one to see the food menu options.',
+        'Views with some animations and transitions to see sushi meals.',
     designSource: {
       "scheme": "https",
       "host": 'www.uplabs.com',
@@ -59,8 +118,7 @@ final routes = <RouteModel>[
   ),
   RouteModel(
     title: 'Chat App',
-    description:
-        'There are three screens: one to splash screen, one to make login and one to see the food menu options.',
+    description: 'Two views with basic screens of a Chat.',
     designSource: {
       "scheme": "https",
       "host": 'www.uplabs.com',
@@ -71,7 +129,7 @@ final routes = <RouteModel>[
   RouteModel(
     title: 'Task TodoList',
     description:
-        'There are three screens: one to splash screen, one to make login and one to see the food menu options.',
+        'A view with design basic TodoList using Provider as state manager.',
     designSource: {
       "scheme": "https",
       "host": 'www.uplabs.com',
@@ -81,8 +139,7 @@ final routes = <RouteModel>[
   ),
   RouteModel(
     title: 'Clothing Shopping',
-    description:
-        'There are three screens: one to splash screen, one to make login and one to see the food menu options.',
+    description: 'Views with beautiful design to see clothes to buy.',
     designSource: {
       "scheme": "https",
       "host": 'dribbble.com',
@@ -95,15 +152,14 @@ final routes = <RouteModel>[
   RouteModel(
     title: 'Basic Calculator IOS',
     category: ChallengeCategory.appClone,
-    description:
-        'There are three screens: one to splash screen, one to make login and one to see the food menu options.',
+    description: 'App Basic Calculator IOS 16 using Getx as state manager.',
     child: calculator_ios.CalculatorScreen(),
   ),
   RouteModel(
     title: 'Clock MIUI',
     category: ChallengeCategory.appClone,
     description:
-        'There are three screens: one to splash screen, one to make login and one to see the food menu options.',
+        'Stopwatch of app Clock MIUI 12 using Provider as state manager.',
     child: const clock_miui.HomeScreen(),
   ),
 ];
