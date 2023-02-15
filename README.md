@@ -6,11 +6,9 @@ Flutter project with UI challenges without third-party widgets packages
 
 # Pages
 
-<img src="./screenshot/login_basic.png" height="300">
-<img src="./screenshot/checkout.png" height="300">
+<img src="./screenshot/login_basic.png" height="300"><img src="./screenshot/checkout.png" height="300">
 
-<img src="./screenshot/login_basic2.png" height="300">
-<img src="./screenshot/confirm_order.png" height="300">
+<img src="./screenshot/login_basic2.png" height="300"><img src="./screenshot/confirm_order.png" height="300">
 
 <img src="./screenshot/login_freebie.png" height="300">
 
